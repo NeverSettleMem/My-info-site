@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input
+        {
+            width: 80px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script src="javascript/js001.js"></script>
+    <script>
+        function area(a,b,c)
+        {
+            s=(parseInt(a.value)+parseInt(b.value))*parseInt(c.value)/2;
+            alert("梯形面积为："+s);
+        }
+    </script>
+    <form>
+        上底：<input type="text" name="a"><br>
+        下底：<input type="text" name="b"><br>
+        高度：<input type="text" name="c"><br>
+        <input id="dd" type="button" value="求面积" onclick="area(a,b,c)"><br>
+        A<input type="radio" name="ks" value="=ks1"><br>
+        B<input type="radio" name="ks" value="=ks2"><br>
+        C<input type="radio" name="ks" value="=ks3"><br>
+        D<input type="radio" name="ks" value="=ks4"><br>
+    </form>
+</body>
+</html>

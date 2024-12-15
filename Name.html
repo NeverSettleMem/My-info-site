@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名器</title>
+    <style>
+        input
+        {
+            width: 280px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center" class="divbox">
+        <h1 align="center">随机点名</h1><br><br>
+        <label for="nameInput">请输入人名（以中文逗号分隔）：</label><br>
+        <input type="text" id="nameInput">
+        <button onclick="randomName()">点名</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function randomName() 
+        {
+            // 获取输入的人名
+            var nameInput = document.getElementById("nameInput").value;
+
+            // 判断输入是否为空
+            if (nameInput.trim() === "") {
+                alert("请输入有效的人名！");
+                return;
+            }
+
+            // 分割输入的人名
+            var names = nameInput.split("，").map(function(name) {
+                return name.trim();
+            });
+
+            // 生成随机索引
+            var randomIndex = Math.floor(Math.random() * names.length);
+
+            // 获取随机选中的人名
+            var randomName = names[randomIndex];
+
+            // 显示结果
+            document.getElementById("result").innerText = "被点到的人是：" + randomName;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.blank{
+    z-index: 1;
+}
+.words{
+    z-index: 1;
+}
+.content{
+    width: auto;
+    height: 5%;
+    background-color:#00aaff;
+    margin: 0 auto;
+    z-index: 2;
+}
+.nav{
+    height: 40px;
+    background-color:none;
+}
+.navlist a{
+    color: antiquewhite;
+    display: block;
+    border-radius: 5px;
+}
+.navlist a:hover{
+    background-color: #00aaff;
+    color: gray;
+}
+.on,a#one:hover{
+    background-image: url(img/indexbackground.jpg);
+    color: gray;
+    height: 47px;
+    margin-top: -7px;
+    line-height: 47px;
+}
+.btli{
+    float: right;
+    width: 140px;
+    text-align: center;
+    line-height: 40px;
+}
+.btli:hover .droplist{
+    display: block;
+}
+.droplist{
+    background-color: #00ccff;
+    box-shadow: 3px 3px 3px antiquewhite;
+    display: none;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+body, html 
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+video#bgvid 
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    background-image: url('../img/background.jpg') no-repeat;
+    background-size: cover;
+}
+.A{
+    color: dodgerblue;
+}
+.B{
+    color: black;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航栏设计</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .content{
+            width: auto;
+            height: 100%;
+            background-color:none;
+            margin: 0 auto;
+        }
+        .nav{
+            height: 40px;
+            background-color:none;
+        }
+        .navlist a{
+            color: antiquewhite;
+            display: block;
+            border-radius: 5px;
+        }
+        .navlist a:hover{
+            background-color: #00aaff;
+            color: gray;
+        }
+        .on,a#one:hover{
+            background-image: url(img/indexbackground.jpg);
+            color: gray;
+            height: 47px;
+            margin-top: -7px;
+            line-height: 47px;
+        }
+        .btli{
+            float: right;
+            width: 140px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .btli:hover .droplist{
+            display: block;
+        }
+        .droplist{
+            background-color: #00ccff;
+            box-shadow: 3px 3px 3px antiquewhite;
+            display: none;
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="nav">
+            <ul class="navlist">
+                <li class="btli"><a href="#" id="one">导航1</a>
+                    <ul class="droplist">
+                        <li><a href="https://www.baidu.com">下拉菜单1</a></li>
+                        <li><a href="#">下拉菜单2</a></li>
+                        <li><a href="#">下拉菜单3</a></li>
+                        <li><a href="#">下拉菜单4</a></li>
+                        <li><a href="#">下拉菜单5</a></li>
+                    </ul>
+                </li>
+                <li class="btli"><a href="#">导航2</a></li>
+                <li class="btli"><a href="#">导航3</a></li>
+                <li class="btli"><a href="#">导航4</a></li>
+                <li class="btli"><a href="#">导航5</a></li>
+                <li class="btli"><a href="#">导航6</a></li>
+                <li class="btli"><a href="#">导航7</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

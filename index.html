@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    function Down()
+    {
+        var time=document.getElementById("Time");
+        if(time.innerHTML==0)
+        {
+            window.location.href="MainPage.html"
+        }
+        else
+        {
+            time.innerHTML=time.innerHTML-1;
+        }
+    }
+    window.setInterval("Down()",1000);
+</script>
+<style>
+    #Time
+    {
+        font-size: 40px;
+        text-align: center;
+        color:"yellow";
+    }
+    #Font
+    {
+        font-size: 35px;
+        text-align:center;
+    }
+</style>  
+</head>
+    <body>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div align="center">
+            <img src="img/CF_logo_horizontal_blktype.png"/>
+        </div>
+        <p id="Font">Powered By Cloud Flare</p >
+        <font color="black" >
+            <p id="Time">6</p >
+        </font>
+    </body>

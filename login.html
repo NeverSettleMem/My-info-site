@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Login</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  form {
+    margin-top: 50px;
+  }
+</style>
+</head>
+<body>
+
+<br><br><br><br><h1>用户登录</h1>
+
+<form id="loginForm">
+  <div>
+    <label for="username">用户名:</label>
+    <input type="text" id="username" name="username" required>
+  </div>
+  <div>
+    <label for="password">密码:  </label>
+    <input type="password" id="password" name="password" required>
+  </div>
+  <button type="submit">登录</button>
+</form>
+
+<p>没有账号? <a href="#" id="registerLink">在此注册！</a></p>
+
+<form id="registerForm" style="display: none;">
+  <h2>注册</h2>
+  <div>
+    <label for="newUsername">用户名:</label>
+    <input type="text" id="newUsername" name="newUsername" required>
+  </div>
+  <div>
+    <label for="newPassword">密码:  </label>
+    <input type="password" id="newPassword" name="newPassword" required>
+  </div>
+  <button type="submit">注册</button>
+</form>
+
+<script>
+  // Function to toggle between login and register forms
+  document.getElementById("registerLink").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "block";
+  });
+
+  // Function to handle registration and store user information
+  document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var newUsername = document.getElementById("newUsername").value;
+    var newPassword = document.getElementById("newPassword").value;
+
+    // Store user information in localStorage
+    localStorage.setItem("username", newUsername);
+    localStorage.setItem("password", newPassword);
+
+    alert("注册成功，现在你可以用你的账号登录了");
+
+    // Reset form
+    document.getElementById("registerForm").reset();
+    document.getElementById("registerForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+  });
+
+  // Function to handle login and redirect to Baidu upon successful login
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Retrieve user information from localStorage
+    var storedUsername = localStorage.getItem("username");
+    var storedPassword = localStorage.getItem("password");
+
+    // Check if login credentials match stored information
+    if (username === storedUsername && password === storedPassword) {
+      alert("登陆成功，正在跳转到sensei的网页");
+      window.location.href = "index.html";
+    } else {
+      alert("无效用户名或密码，请重试");
+    }
+  });
+</script>
+
+</body>
+</html>
